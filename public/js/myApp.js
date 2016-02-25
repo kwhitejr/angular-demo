@@ -12,7 +12,7 @@ myApp
     console.log('Pyuu pyu!!');
   });
 
-myApp.controller('MyController', ['$scope', function ($scope) {
-  $scope.myFirstName = 'Ser Kevin of Haus Whyte';
-  $scope.myModel = "Ready Player One";
-}]);
+// myApp.controller('MyController', ['$scope', function ($scope) {
+//   $scope.myFirstName = 'Ser Kevin of Haus Whyte';
+//   $scope.myModel = "Ready Player One";
+// }]);
