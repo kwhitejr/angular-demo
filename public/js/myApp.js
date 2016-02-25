@@ -8,9 +8,15 @@ myApp
   .config(function () {
 
   })
-  .run(function () {
-    console.log('Pyuu pyu!!');
-  });
+  .run([
+    '$rootScope',
+    'APP_VERSION',
+    function ($rootScope, APP_VERSION) {
+      // Start Application
+      console.log("Pyuuy pyuu");
+      $rootScope.version = APP_VERSION;
+    }
+  ]);
 
 // myApp.controller('MyController', ['$scope', function ($scope) {
 //   $scope.myFirstName = 'Ser Kevin of Haus Whyte';
