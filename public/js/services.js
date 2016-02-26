@@ -4,9 +4,9 @@ myApp.service('BookService', BookService);
 
 function BookService () {
   var books = [
-    "Doby Mick",
-    "Halvin & Cobbes",
-    "Parry Hotter"
+    { author: "KYABIN", title: "Doby Mick"},
+    { author: "KYABIN", title: "Halvin & Cobbes"},
+    { author: "KYABIN", title: "Parry Hotter"}
   ];
 
   this.getBooks = function () {
