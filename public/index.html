@@ -39,9 +39,10 @@
       </li>
     </ul>
 
-    <h1>Movies Before 2004</h1>
+    <h1>Movies Before {{beforeYear}}</h1>
+    <input type="number" ng-model="beforeYear" ng-init="beforeYear=2003">
     <ul>
-      <li ng-repeat="movie in movies | beforeYearFilter:2004">
+      <li ng-repeat="movie in movies | beforeYearFilter:beforeYear">
         <h4 class="movie_title">{{movie.title}}</h4>
         <p class="movie_year">{{movie.year}}</p>
       </li>
