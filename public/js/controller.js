@@ -11,5 +11,6 @@ myApp.controller('MyController', [
     $scope.mainCharacter = mainCharacter;
     $scope.characterVersion = characterVersionFactory;
     $scope.books = BookService.getBooks();
+    $scope.BookService = BookService;
   }
 ]);

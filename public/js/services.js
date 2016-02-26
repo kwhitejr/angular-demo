@@ -9,6 +9,14 @@ function BookService () {
     { author: "KYABIN", title: "Parry Hotter"}
   ];
 
+  this.addBook = function (title, author) {
+    var newBook = {
+      title: title,
+      author: author
+    };
+    books.push(newBook);
+  };
+
   this.getBooks = function () {
     return books;
   };
