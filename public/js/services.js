@@ -9,6 +9,8 @@ function BookService () {
     { author: "KYABIN", title: "Parry Hotter"}
   ];
 
+  localStorage.books = books;
+
   this.addBook = function (title, author) {
     var newBook = {
       title: title,
