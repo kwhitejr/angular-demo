@@ -3,60 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="/animations.css">
 </head>
 <body ng-app="myApp">
+
+  <a href="/#/">Index</a>
+  <a href="/#/books">Books</a>
+  <a href="/#/movies">Movies</a>
+
   <div ng-view></div>
-  <h1>{{"hello" + " " + "Angular!"}}</h1>
-  <div>{{80000 + 85}}</div>
-
   <div ng-controller="MyController">
-    <input type="text" ng-model="myModel">
-    <div>
-      My Model: {{ myModel }}
-    </div>
-      <div>My First Name: {{ myFirstName }}</div>
-      <div>Main Character: {{ mainCharacter }}</div>
-      <div>Character Version: {{ characterVersion }}</div>
-    <form>
-      <input type="text" ng-model="title">
-      <input type="text" ng-model="author">
-      <button ng-click="BookService.addBook(title, author);
-        title='';
-        author='';
-      ">Add Book</button>
-    </form>
-    <h1>Search Books by Title: {{searchBookTitle}}</h1>
-    <input type="text" ng-model="searchBookTitle" placeholder="enter book title..."></input>
-    <ul>
-      <li class="book"
-        ng-repeat="book in books | filter:{title: searchBookTitle} | orderBy: '+title'">
-        <h4 class="book_title" ng-click="alert(book.title)">{{book.title}}</h4>
-        <p class="book_author">{{book.author}}</p>
-      </li>
-    </ul>
-    {{ movies }}
-    <h1>1983 Movies</h1>
-    <ul>
-      <li ng-repeat="movie in movies | filter:{year:1983}">
-        <h4 class="movie_title">{{movie.title}}</h4>
-        <p class="movie_year">{{movie.year}}</p>
-      </li>
-    </ul>
 
-    <h1>Movies Before {{beforeYear}}</h1>
-    <input type="number" ng-model="beforeYear" ng-init="beforeYear=2006">
-    <ul>
-      <li ng-repeat="movie in movies | beforeYearFilter:beforeYear | orderBy:'+year'">
-        <h4 class="movie_title">{{movie.title}}</h4>
-        <p class="movie_year">{{movie.year}}</p>
-      </li>
-    </ul>
-    </div>
   Version {{ version }}
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
   <script type="text/javascript" src="./js/myApp.js"></script>
   <script type="text/javascript" src="./js/controller.js"></script>
   <script type="text/javascript" src="./js/values.js"></script>
