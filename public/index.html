@@ -13,9 +13,9 @@
     <div>
       My Model: {{ myModel }}
     </div>
-    My First Name: {{ myFirstName }}
-    Main Character: {{ mainCharacter }}
-    Character Version: {{ characterVersion }}
+      <div>My First Name: {{ myFirstName }}</div>
+      <div>Main Character: {{ mainCharacter }}</div>
+      <div>Character Version: {{ characterVersion }}</div>
     <form>
       <input type="text" ng-model="title">
       <input type="text" ng-model="author">
@@ -38,6 +38,14 @@
         <p class="movie_year">{{movie.year}}</p>
       </li>
     </ul>
+
+    <h1>Movies Before 2004</h1>
+    <ul>
+      <li ng-repeat="movie in movies | beforeYearFilter:2004">
+        <h4 class="movie_title">{{movie.title}}</h4>
+        <p class="movie_year">{{movie.year}}</p>
+      </li>
+    </ul>
     </div>
   Version {{ version }}
 
@@ -50,6 +58,7 @@
   <script type="text/javascript" src="./js/factories.js"></script>
   <script type="text/javascript" src="./js/services.js"></script>
   <script type="text/javascript" src="./js/providers.js"></script>
+  <script type="text/javascript" src="./js/filters.js"></script>
 
 </body>
 </html>
