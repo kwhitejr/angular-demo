@@ -6,14 +6,16 @@ myApp.controller('MyController', [
   'characterVersionFactory',
   'BookService',
   'Movies',
-  '$http',
-  function ($scope, mainCharacter, characterVersionFactory, BookService, Movies, $http) {
+  function ($scope, mainCharacter, characterVersionFactory, BookService, Movies) {
     $scope.myFirstName = 'Ser Kevin of Haus Whyte';
     $scope.myModel = "Ready Player One";
     $scope.mainCharacter = mainCharacter;
     $scope.characterVersion = characterVersionFactory;
     $scope.books = BookService.getBooks();
     $scope.BookService = BookService;
-    $scope.Movies = Movies;
+    $scope.movies = [];
+    Movies.get().then(function (res) {
+      $scope.movies = res.data;
+    });
   }
 ]);
