@@ -1,12 +1,18 @@
-console.log('hwat pu eomyh');
-
-angular.module('myApp', []);
+angular.module('myApp', ['ngRoute']);
 
 var myApp = angular.module('myApp');
 
 myApp
-  .config(function (MoviesProvider) {
+  .config(function ($routeProvider, MoviesProvider) {
     MoviesProvider.setEndpoint('/api');
+
+
+    $routeProvider
+      .when('/404', {
+        templateUrl: '/templates/404.html'
+      })
+      .otherwise('/404');
+
   })
   .run([
     '$rootScope',
